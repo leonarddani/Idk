@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Platform Stock Generator</h1>
+
+    <label for="platform">Zgjedh platformën:</label>
+    <select id="platform">
+        <option value="Netflix">Netflix</option>
+        <option value="Disney">Disney+</option>
+        <option value="Steam">Steam</option>
+        <option value="Epic Games">Epic Games</option>
+        <option value="Discord">Discord</option>
+        <option value="URL Logs">URL Logs</option>
+    </select>
+
+    <button onclick="generateStock()">Gjenero</button>
+
+    <div id="output">Këtu del rezultati</div>
+
+    <script>
+        function generateStock() {
+            const platform = document.getElementById("platform").value;
+            const output = document.getElementById("output");
+
+            const stockData = {
+                "Netflix": "Netflix stock full: user1:pass1, user2:pass2...",
+                "Disney": "Disney+ stock full: user1:pass1, user2:pass2...",
+                "Steam": "Steam stock full: user1:pass1, user2:pass2...",
+                "Epic Games": "Epic Games stock full: user1:pass1, user2:pass2...",
+                "Discord": "Discord stock full: user1:pass1, user2:pass2...",
+                "URL Logs": "URL Logs: https://example.com/log1, https://example.com/log2..."
+            };
+
+            output.textContent = stockData[platform] || "Nuk ka të dhëna për ketë platformë.";
+        }
+    </script>
+
+</body>
+</html>
